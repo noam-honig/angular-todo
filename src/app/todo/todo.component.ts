@@ -3,8 +3,7 @@ import { Task } from './task';
 
 @Component({
   selector: 'app-todo',
-  templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css']
+  templateUrl: './todo.component.html'
 })
 export class TodoComponent implements OnInit {
 
@@ -26,12 +25,11 @@ export class TodoComponent implements OnInit {
   }
   addTask() {
     if (this.newTaskTitle) {
-      const newTask: Task = {
+      this.tasks.push({
         id: this.tasks.length,
         title: this.newTaskTitle,
         completed: false
-      };
-      this.tasks.push(newTask);
+      });
       this.newTaskTitle = '';
     }
   }

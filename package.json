@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "dev-ng": "ng serve",
+    "ng-dev": "ng serve",
     "start": "node dist/server/",
     "dev": "concurrently -k -n \"API,WEB\" -c \"bgBlue.bold,bgGreen.bold\" \"ts-node-dev -P tsconfig.server.json src/server/\" \"ng serve --proxy-config proxy.conf.json --open\"",
     "build": "ng build && tsc -p tsconfig.server.json",

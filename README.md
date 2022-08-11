@@ -1,27 +1,60 @@
-# AngularTodo
+# Angular todo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+This is an example todo app which uses:
+* Angular
+* express
+* remult
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Getting Started
+### Setup
+```sh
+npm i
+```
 
-## Code scaffolding
+### Fire it up
+```sh
+npm run dev-ng
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Browse to `http://localhost:4200` to see the web app.
 
-## Build
+Api runs on `localhost:3002` but is proxied via `localhost:4200/api/*`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Deploy to Heroku
+```sh
+heroku create
+heroku config:set SESSION_SECRET=random-secret
+heroku addons:create heroku-postgresql:hobby-dev
+git add .
+git commit -m "todo app deploy"
+git push heroku master
+heroku apps:open
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installed components:
+1. Basic Setup: `express` and `remult`
+   ```sh
+   npm i express remult
+   npm i --save-dev @types/express ts-node-dev concurrently
+   ```
+   See [Basic Setup](https://remult.dev/tutorials/react/#option-2-step-by-step-setup)
+2. Authentication: 
+   ```sh
+    npm i cookie-session
+   npm i --save-dev @types/cookie-session
+   ```
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Postgres:
+   ```sh
+   npm i pg
+   npm i --save-dev @types/pg
+   ```
+   See [Connect to Postgres](https://remult.dev/tutorials/react/deployment.html#connect-to-postgres)
+4. For Heroku Deployment:
+   ```sh
+   npm i compression helmet heroku-ssl-redirect
+   npm i @types/compression --save-dev
+   ```
+   See [Prepare for Production](https://remult.dev/tutorials/vue/deployment.html#prepare-for-production)

@@ -1,0 +1,23 @@
+<div>
+    <main>
+        <input
+            [(ngModel)]="newTaskTitle"
+            (blur)="addTask"
+            placeholder="What needs to be done?"
+        >
+
+        <div *ngFor="let task of tasks">
+            <input
+                type="checkbox"
+                [(ngModel)]="task.completed"
+            >
+            <input [(ngModel)]="task.title">
+            <button (click)="deleteTask(task)">x</button>
+        </div>
+
+    </main>
+    <div>
+        <button (click)="setAll(true)">Set all as completed</button>
+        <button (click)="setAll(false)">Set all as uncompleted</button>
+    </div>
+</div>

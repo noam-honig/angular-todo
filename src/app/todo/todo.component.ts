@@ -24,7 +24,7 @@ export class TodoComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  addTask() {
+  async addTask() {
     if (this.newTaskTitle) {
       this.tasks.push({
         id: this.tasks.length,
@@ -35,11 +35,11 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  deleteTask(task: Task) {
+  async deleteTask(task: Task) {
     this.tasks = this.tasks.filter(t => t != task);
   }
 
-  setAll(completed: boolean) {
+  async setAll(completed: boolean) {
     for (const task of this.tasks) {
       task.completed = completed;
     }

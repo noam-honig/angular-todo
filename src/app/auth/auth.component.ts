@@ -17,7 +17,10 @@ export class AuthComponent implements OnInit {
       {
         username: this.signInUsername
       }).subscribe({
-        next: user => this.currentUser = user,
+        next: user => {
+          this.currentUser = user;
+          this.signInUsername = '';
+        },
         error: error => alert(error.error)
       });
   }

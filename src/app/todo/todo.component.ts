@@ -42,6 +42,4 @@ export class TodoComponent implements OnInit {
       task.completed = completed;
     }
   }
-
-
 }

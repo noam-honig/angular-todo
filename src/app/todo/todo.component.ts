@@ -23,7 +23,7 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   async addTask() {
     if (this.newTaskTitle) {
       this.tasks.push({
@@ -36,7 +36,11 @@ export class TodoComponent implements OnInit {
   }
 
   async deleteTask(task: Task) {
-    this.tasks = this.tasks.filter(t => t != task);
+    try {
+      this.tasks = this.tasks.filter(t => t != task);
+    } catch (error: any) {
+      alert(error.message);
+    }
   }
 
   async setAll(completed: boolean) {

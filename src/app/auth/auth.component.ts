@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
-import { UserInfo } from 'remult'
+import { remult, UserInfo } from 'remult'
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +9,7 @@ import { UserInfo } from 'remult'
 export class AuthComponent implements OnInit {
   constructor(private http: HttpClient) {}
   signInUsername = ''
-  currentUser?: UserInfo
+  remult = remult
 
   signIn() {
     this.http
@@ -18,7 +18,7 @@ export class AuthComponent implements OnInit {
       })
       .subscribe({
         next: (user) => {
-          this.currentUser = user
+          this.remult.user = user
           this.signInUsername = ''
         },
         error: (error) => alert(error.error)
@@ -28,12 +28,12 @@ export class AuthComponent implements OnInit {
   signOut() {
     this.http
       .post('/api/signOut', {})
-      .subscribe(() => (this.currentUser = undefined))
+      .subscribe(() => (this.remult.user = undefined))
   }
 
   ngOnInit() {
     this.http
       .get<UserInfo>('/api/currentUser')
-      .subscribe((user) => (this.currentUser = user))
+      .subscribe((user) => (this.remult.user = user))
   }
 }

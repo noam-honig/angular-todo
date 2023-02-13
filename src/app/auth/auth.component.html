@@ -1,13 +1,13 @@
-<header *ngIf="!currentUser">
+<header *ngIf="!remult.user">
   <input
     [(ngModel)]="signInUsername"
     placeholder="Username, try Steve or Jane"
   />
   <button (click)="signIn()">Sign in</button>
 </header>
-<ng-container *ngIf="currentUser">
+<ng-container *ngIf="remult.user">
   <header>
-    Hello {{ currentUser.name }}
+    Hello {{ remult.user.name }}
     <button (click)="signOut()">Sign Out</button>
   </header>
   <app-todo></app-todo>

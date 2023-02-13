@@ -1,7 +1,11 @@
 <div>
   <main>
-    <form (submit)="addTask(); $event.preventDefault()">
-      <input [(ngModel)]="newTaskTitle" placeholder="What needs to be done?" />
+    <form (submit)="addTask()">
+      <input
+        [(ngModel)]="newTaskTitle"
+        name="newTaskTitle"
+        placeholder="What needs to be done?"
+      />
     </form>
     <div *ngFor="let task of tasks">
       <input type="checkbox" [(ngModel)]="task.completed" />

@@ -9,16 +9,8 @@ import { AuthComponent } from './auth/auth.component'
 import { remult } from 'remult'
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TodoComponent,
-    AuthComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  declarations: [AppComponent, TodoComponent, AuthComponent],
+  imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

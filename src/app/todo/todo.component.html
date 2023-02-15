@@ -6,15 +6,16 @@
         name="newTaskTitle"
         placeholder="What needs to be done?"
       />
+      <button>Add</button>
     </form>
     <div *ngFor="let task of tasks">
       <input type="checkbox" [(ngModel)]="task.completed" />
       <input [(ngModel)]="task.title" />
-      <button (click)="deleteTask(task)">x</button>
+      <button (click)="deleteTask(task)">X</button>
     </div>
+    <footer>
+      <button (click)="setAllCompleted(true)">Set all completed</button>
+      <button (click)="setAllCompleted(false)">Set all uncompleted</button>
+    </footer>
   </main>
-  <div>
-    <button (click)="setAllCompleted(true)">Set all as completed</button>
-    <button (click)="setAllCompleted(false)">Set all as uncompleted</button>
-  </div>
 </div>

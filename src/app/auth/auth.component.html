@@ -1,14 +1,17 @@
-<header *ngIf="!remult.user">
-  <input
-    [(ngModel)]="signInUsername"
-    placeholder="Username, try Steve or Jane"
-  />
-  <button (click)="signIn()">Sign in</button>
-</header>
+<main *ngIf="!remult.user">
+  <form (submit)="signIn()">
+    <input
+      [(ngModel)]="signInUsername"
+      name="xx"
+      placeholder="Username, try Steve or Jane"
+    />
+    <button>Sign in</button>
+  </form>
+</main>
 <ng-container *ngIf="remult.user">
-  <header>
+  <div>
     Hello {{ remult.user.name }}
     <button (click)="signOut()">Sign Out</button>
-  </header>
+  </div>
   <app-todo></app-todo>
 </ng-container>

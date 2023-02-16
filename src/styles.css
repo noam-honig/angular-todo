@@ -2,7 +2,8 @@
 body {
   margin: 0;
   background: whitesmoke;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial;
+  font-size: 18px;
   display: flex;
   justify-content: center;
 }
@@ -71,6 +72,7 @@ button {
   font-weight: 500;
   box-sizing: border-box;
   font-family: inherit;
+  font-size: 16px;
   background-color: white;
   border-radius: 3em;
   border: 1px solid lightgray;

@@ -9,7 +9,6 @@ export class TodoComponent implements OnInit, OnDestroy {
   ngOnInit() {}
   ngOnDestroy() {}
 
-  newTaskTitle = ''
   tasks: Task[] = [
     { id: 1, title: 'Setup', completed: true },
     { id: 2, title: 'Entities', completed: false },
@@ -21,7 +20,8 @@ export class TodoComponent implements OnInit, OnDestroy {
     { id: 8, title: 'Authentication and Authorization', completed: false },
     { id: 9, title: 'Deployment', completed: false }
   ]
-
+  
+  newTaskTitle = ''
   async addTask() {
     try {
       this.tasks.push({

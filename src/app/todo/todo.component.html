@@ -10,7 +10,7 @@
     </form>
     <div *ngFor="let task of tasks">
       <input type="checkbox" [(ngModel)]="task.completed" />
-      <input [(ngModel)]="task.title" />
+      <span> {{ task.title }}</span>
       <button (click)="deleteTask(task)">X</button>
     </div>
     <footer>

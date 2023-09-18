@@ -24,11 +24,12 @@ export class TodoComponent implements OnInit, OnDestroy {
   newTaskTitle = ''
   async addTask() {
     try {
-      this.tasks.push({
+      const newTask = {
         id: (this.tasks.length + 1).toString(),
         title: this.newTaskTitle,
         completed: false,
-      })
+      }
+      this.tasks.push(newTask)
       this.newTaskTitle = ''
     } catch (error: any) {
       alert(error.message)

@@ -1,5 +1,6 @@
-<main *ngIf="!remult.user">
+<main *ngIf="!remult.user" class="sign-in">
   <form (submit)="signIn()">
+    <label>Name</label>
     <input
       [(ngModel)]="signInUsername"
       name="xx"

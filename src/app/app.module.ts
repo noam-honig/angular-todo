@@ -12,7 +12,7 @@ import { remult } from 'remult'
   declarations: [AppComponent, TodoComponent, AuthComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor(zone: NgZone, http: HttpClient) {

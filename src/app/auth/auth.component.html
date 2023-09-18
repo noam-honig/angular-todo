@@ -1,10 +1,11 @@
 <main *ngIf="!remult.user" class="sign-in">
+  <h2>Sign In</h2>
   <form (submit)="signIn()">
     <label>Name</label>
     <input
       [(ngModel)]="signInUsername"
       name="xx"
-      placeholder="Username, try Steve or Jane"
+      placeholder="Try Steve or Jane"
     />
     <button>Sign in</button>
   </form>

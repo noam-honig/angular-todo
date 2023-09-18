@@ -3,7 +3,7 @@ import { Task } from './task'
 
 @Component({
   selector: 'app-todo',
-  templateUrl: './todo.component.html'
+  templateUrl: './todo.component.html',
 })
 export class TodoComponent implements OnInit, OnDestroy {
   tasks: Task[] = [
@@ -16,7 +16,7 @@ export class TodoComponent implements OnInit, OnDestroy {
     { id: '7', title: 'Updating multiple tasks', completed: false },
     { id: '8', title: 'Database', completed: false },
     { id: '9', title: 'Authentication and Authorization', completed: false },
-    { id: '10', title: 'Deployment', completed: false }
+    { id: '10', title: 'Deployment', completed: false },
   ]
   ngOnInit() {}
   ngOnDestroy() {}
@@ -27,7 +27,7 @@ export class TodoComponent implements OnInit, OnDestroy {
       this.tasks.push({
         id: (this.tasks.length + 1).toString(),
         title: this.newTaskTitle,
-        completed: false
+        completed: false,
       })
       this.newTaskTitle = ''
     } catch (error: any) {

@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { remult, UserInfo } from 'remult'
+import { retry, timer } from 'rxjs'
 
 @Component({
   selector: 'app-auth',
-  templateUrl: './auth.component.html'
+  templateUrl: './auth.component.html',
 })
 export class AuthComponent implements OnInit {
   constructor(private http: HttpClient) {}
@@ -14,14 +15,14 @@ export class AuthComponent implements OnInit {
   signIn() {
     this.http
       .post<UserInfo>('/api/signIn', {
-        username: this.signInUsername
+        username: this.signInUsername,
       })
       .subscribe({
         next: (user) => {
           this.remult.user = user
           this.signInUsername = ''
         },
-        error: (error) => alert(error.error)
+        error: (error) => alert(error.error),
       })
   }
 
@@ -34,6 +35,7 @@ export class AuthComponent implements OnInit {
   ngOnInit() {
     this.http
       .get<UserInfo>('/api/currentUser')
+      .pipe(retry({ count: 5, delay: () => timer(250) }))
       .subscribe((user) => (this.remult.user = user))
   }
 }

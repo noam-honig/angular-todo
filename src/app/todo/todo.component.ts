@@ -25,8 +25,8 @@ export class TodoComponent implements OnInit, OnDestroy {
   async addTask() {
     try {
       const newTask = {
-        id: (this.tasks.length + 1).toString(),
         title: this.newTaskTitle,
+        id: (this.tasks.length + 1).toString(),
         completed: false,
       }
       this.tasks.push(newTask)

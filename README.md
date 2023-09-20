@@ -11,6 +11,8 @@ This is an example todo app which uses:
 ### Setup
 
 ```sh
+git clone https://github.com/noam-honig/angular-todo
+cd angular-todo
 npm i
 ```
 

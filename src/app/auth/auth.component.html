@@ -1,4 +1,4 @@
-<main *ngIf="!remult.user" class="sign-in">
+<main *ngIf="showSignIn" class="sign-in">
   <h2>Sign In</h2>
   <form (submit)="signIn()">
     <label>Name</label>
@@ -10,10 +10,13 @@
     <button>Sign in</button>
   </form>
 </main>
-<ng-container *ngIf="remult.user">
-  <div>
+<ng-container *ngIf="!showSignIn">
+  <div *ngIf="remult.user">
     Hello {{ remult.user.name }}
     <button (click)="signOut()">Sign Out</button>
+  </div>
+  <div *ngIf="!remult.user">
+    <button (click)="showSignIn = true">Sign In</button>
   </div>
   <app-todo></app-todo>
 </ng-container>

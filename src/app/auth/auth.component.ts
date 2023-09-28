@@ -11,6 +11,7 @@ export class AuthComponent implements OnInit {
   constructor(private http: HttpClient) {}
   signInUsername = ''
   remult = remult
+  showSignIn = false
 
   signIn() {
     this.http
@@ -21,6 +22,7 @@ export class AuthComponent implements OnInit {
         next: (user) => {
           this.remult.user = user
           this.signInUsername = ''
+          this.showSignIn = false
         },
         error: (error) => alert(error.error),
       })
@@ -30,6 +32,7 @@ export class AuthComponent implements OnInit {
     this.http
       .post('/api/signOut', {})
       .subscribe(() => (this.remult.user = undefined))
+    this.showSignIn = true
   }
 
   ngOnInit() {

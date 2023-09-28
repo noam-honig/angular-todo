@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
-import { Task } from './task'
+import { Task } from '../model/task'
 
 @Component({
   selector: 'app-todo',

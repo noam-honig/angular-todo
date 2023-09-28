@@ -5,4 +5,5 @@ import { api } from './api'
 const app = express()
 app.use(auth)
 app.use(api)
-app.listen(3002)
+
+app.listen(3002, () => console.log('Server started'))

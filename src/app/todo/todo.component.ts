@@ -17,6 +17,7 @@ export class TodoComponent implements OnInit, OnDestroy {
     { id: '8', title: 'Database', completed: false },
     { id: '9', title: 'Authentication and Authorization', completed: false },
     { id: '10', title: 'Deployment', completed: false },
+    { id: '11', title: 'Show Example Apps', completed: false },
   ]
   ngOnInit() {}
   ngOnDestroy() {}

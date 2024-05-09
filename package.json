@@ -26,7 +26,7 @@
     "graphql-yoga": "^4.0.4",
     "helmet": "^7.0.0",
     "pg": "^8.11.3",
-    "remult": "^0.25.5-exp.23",
+    "remult": "^0.26.10",
     "rxjs": "~7.8.0",
     "swagger-ui-express": "^5.0.0",
     "tslib": "^2.3.0",

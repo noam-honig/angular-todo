@@ -27,5 +27,6 @@
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "typescript.preferences.importModuleSpecifierEnding": "minimal"
 }
